@@ -210,8 +210,23 @@
   .table {
     display: table;
   }
+  .h-auto {
+    height: auto;
+  }
   .h-dvh {
     height: 100dvh;
+  }
+  .h-full {
+    height: 100%;
+  }
+  .max-h-full {
+    max-height: 100%;
+  }
+  .min-h-auto {
+    min-height: auto;
+  }
+  .min-h-full {
+    min-height: 100%;
   }
   .w-full {
     width: 100%;
@@ -242,6 +257,9 @@
   }
   .items-center {
     align-items: center;
+  }
+  .items-stretch {
+    align-items: stretch;
   }
   .justify-center {
     justify-content: center;
