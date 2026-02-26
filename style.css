@@ -1,49 +1,23 @@
-@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @import "tailwindcss";
 
 @theme {
-  --font-fira: Fira Sans, sans-serif;
-  --font-ibm-plex: IBM Plex Sans, sans-serif;
-  --color-primary: #191f3a;
-  --color-iceFishing: #e3eff8;
-  --color-icelightBlue: #acceea;
-  --color-superSaiyan: #ffdd00;
-  --color-encoreGray: #6f7384;
-  --color-blueBay: #5a9dd5;
-  --color-sunset: #ffcab1;
-  --color-jordyBlue: #7da7d9;
-  --color-meltingGlacier: #e9f7f5;
-  --color-KonBlue: #172735;
-  --color-blueBooties: #c8def1;
-  --color-celestialBlue: #2d4f6b;
-  --color-imgBg: #d9d9d9;
-  --color-windsweptBeach: #e2e3e6;
-  --color-primaryButton: #a9abb5;
-  --color-tag: #4476a0;
-  --color-alphabetBlue: #b9e4c2;
-  --color-whiteSmoke: #f3f3f3;
-  --color-report: #ffc5c5;
-  --color-greenBrocade: #dcf2e0;
-  --color-checkmark: #b9e4c2;
-  --color-dropdown: #c8def1;
-  --color-pureBlack: #1a1a1a;
-  --color-galeForce: #36454c;
-  --color-cotton: #e9f4fb;
-  --color-blueRay: #5ea0d6;
-  --color-aquamarine: #7accc0;
-  --color-lightgray: #f2f2f2;
-  --color-lightyellow: #fff4aa;
-  --color-lightlavender: #eae3fc;
-  --color-mediumpurple: #8459ef;
-  --color-whiteish: #f9fafb;
-  --color-lightvanilla: #fff9d4;
-
+  --color-primary: #111827;
+  --color-iceFishing: #f1f5f9;
+  --color-icelightBlue: #eff6ff;
+  --color-icelightBlue2: #dbeafe;
+  --color-icelightBlue3: #bfdbfe;
+  --color-icelightBlue4: #93c5fd;
+  --color-icelightBlue5: #60a5fa;
+  --color-icelightBlue6: #3b82f6;
+  --color-encoreGray: #64748b;
+  --color-meltingGlacier: #ecfeff;
+  --color-KonBlue: #0f172a;
+  --color-blueBooties: #bfdbfe;
+  --color-celestialBlue: #1e3a8a;
+  --color-imgBg: #e5e7eb;
   /* BREAKPOINTS */
-
-  /* --breakpoint-xxs: 320px; */
-  --breakpoint-xs: 375px;
-  --breakpoint-xxs: 475px;
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 1024px;
@@ -51,17 +25,37 @@
   --breakpoint-1xl: 1440px;
   --breakpoint-2xl: 1536px;
   --breakpoint-3xl: 1920px;
+  /* FONTS */
+  --font-poppins: "Poppins", sans-serif;
 }
-
+body,
+html {
+  @apply font-poppins! h-auto;
+}
 .overlap-card {
-  @apply relative w-full xl:rounded-[20px] pt-6 xl:pt-0 1xl:rounded-[40px] px-4 rounded-2xl flex lg:flex-row flex-col-reverse items-center xl:gap-12  text-center lg:text-left overflow-hidden;
+  @apply relative w-full xl:rounded-[20px] h-full pt-6 xl:pt-0 1xl:rounded-[40px] px-4 rounded-2xl flex lg:flex-row flex-col-reverse items-center xl:gap-12  text-center lg:text-left overflow-hidden;
 }
-.overlap-heading {
-  @apply text-2xl sm:text-3xl lg:text-4xl 3xl:text-5xl font-medium font-fira leading-[116%];
+.overlap-main-heading {
+  @apply text-sm sm:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl text-celestialBlue mb-3 xl:mb-5 mt-3 lg:mt-0;
 }
 .overlap-card-heading {
-  @apply text-2xl xl:text-3xl 2xl:text-4xl 3xl:text-5xl font-medium font-fira leading-[120%];
+  @apply text-2xl xl:text-3xl 2xl:text-4xl 3xl:text-5xl font-semibold leading-[120%] -tracking-tight;
+}
+.overlap-description {
+  @apply text-sm sm:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl text-KonBlue mt-3 mb-5 lg:mt-6 xl:mb-7 2xl:mt-8 3xl:mb-12 leading-[160%];
+}
+.overlap-card-img {
+  @apply object-cover max-w-100 lg:max-w-106 w-full shrink-0 lg:mt-5 3xl:mt-11 rounded-lg lg:rounded-b-lg rounded-b-none;
 }
 .overlap-container-container {
-  @apply max-w-343.75 3xl:max-w-421 mx-auto w-full;
+  @apply max-w-7xl 3xl:max-w-384 mx-auto w-full;
+}
+.overlap-container-right {
+  @apply lg:w-1/2 lg:max-w-156.25 3xl:pt-22.25 lg:pt-16 pb-8 lg:pb-16 3xl:pb-21 flex flex-col items-center lg:items-start;
+}
+.card {
+  @apply flex;
+}
+.secondary-btn {
+  @apply flex items-center justify-center uppercase px-4 h-10 xl:h-12 2xl:h-14 3xl:h-16 sm:px-6 rounded-4xl bg-primary text-white font-bold w-fit  border border-transparent hover:border-primary hover:bg-transparent hover:text-primary transition-all duration-300 ease-in-out cursor-pointer text-sm sm:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl 3xl:px-8  leading-[150%] sm:leading-[100%];
 }

@@ -1,76 +1,57 @@
+// overlap.js
+
 gsap.registerPlugin(ScrollTrigger);
 
 let ctx;
 
 /* --------------------------------
-   DYNAMIC HEIGHT (NO dvh / svh)
+   EQUAL CARD HEIGHT FUNCTION
 -------------------------------- */
-function setDynamicHeight() {
-  const sections = document.querySelectorAll(".overlap-conatiner-container");
+function equalCardHeights() {
+  const cards = document.querySelectorAll(".card");
 
-  sections.forEach((section) => {
-    section.style.minHeight = `${window.innerHeight}px`;
+  // Reset height first
+  cards.forEach((card) => {
+    card.style.height = "auto";
+  });
+
+  let maxHeight = 0;
+
+  cards.forEach((card) => {
+    const height = card.offsetHeight;
+    if (height > maxHeight) {
+      maxHeight = height;
+    }
+  });
+
+  // Apply max height to all
+  cards.forEach((card) => {
+    card.style.height = maxHeight + "px";
   });
 }
 
 /* --------------------------------
-   CARD ANIMATION (UNCHANGED)
+   CARD ANIMATION
 -------------------------------- */
 function cardAnimation() {
   if (ctx) ctx.revert();
-
-  // ❌ stop only for extremely small screens if needed
   if (window.innerWidth < 320) return;
 
   ctx = gsap.context(() => {
     const cards = gsap.utils.toArray(".card");
     const wrappers = gsap.utils.toArray(".card-wrapper");
 
-    /* -------------------------------
-       RESPONSIVE BASE OFFSET
-    -------------------------------- */
-    const getBaseOffset = () => {
-      const w = window.innerWidth;
+    const baseOffset = window.innerWidth >= 1024 ? 80 : 40;
+    const getOffset = (index) => baseOffset + index * 40;
 
-      if (w >= 1920) {
-        return 220; // 🖥 1920px and above
-      }
-
-      if (w >= 1280) {
-        return 160; // 💻 1280px – 1919px
-      }
-
-      if (w >= 1024) {
-        return 150; // 📱 Tablet landscape
-      }
-
-      if (w >= 640) {
-        return 140; // 📱 Mobile large
-      }
-
-      return 140; // 📱 Mobile small fallback
-    };
-
-    const getOffset = (index) => {
-      const base = getBaseOffset();
-      return base + index * 60;
-    };
-
-    /* -------------------------------
-       INITIAL STATE
-    -------------------------------- */
     cards.forEach((card, i) => {
+      // Initial scale
       gsap.set(card, {
         scale: 0.87 + i * 0.02,
         transformOrigin: "center top",
-        willChange: "transform",
       });
-    });
 
-    /* -------------------------------
-       SCALE + PIN
-    -------------------------------- */
-    cards.forEach((card, i) => {
+      // Scale animation
       gsap.to(card, {
         scale: 0.87 + i * 0.02,
         ease: "none",
@@ -83,6 +64,7 @@ function cardAnimation() {
         },
       });
 
+      // Pin wrapper
       ScrollTrigger.create({
         trigger: wrappers[i],
         start: () => `top ${getOffset(i)}px`,
@@ -99,19 +81,23 @@ function cardAnimation() {
   ScrollTrigger.refresh();
 }
 
-/* ---------- LOAD ---------- */
+/* --------------------------------
+   INIT
+-------------------------------- */
 window.addEventListener("load", () => {
-  setDynamicHeight();
+  equalCardHeights(); // equal height first
   cardAnimation();
 });
 
-/* ---------- RESIZE ---------- */
+/* --------------------------------
+   RESIZE
+-------------------------------- */
 let resizeTimer;
+
 window.addEventListener("resize", () => {
   clearTimeout(resizeTimer);
   resizeTimer = setTimeout(() => {
-    setDynamicHeight();
-    ScrollTrigger.refresh();
-    cardAnimation();
+    equalCardHeights(); // re-calc height
+    cardAnimation(); // re-init animation
   }, 300);
 });

@@ -7,131 +7,169 @@
     <title>Document</title>
   </head>
   <body>
-    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js" defer></script>
-    <script
-      src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"
-      defer
-    ></script>
-    <script src="/overlap.js" defer></script>
     <div class="h-dvh bg-red-900 mb-10"></div>
-    <section class="relative overlap-container-container">
-      <!-- CARD 1 -->
-      <article class="flex justify-center min-w-full h-full">
-        <div class="card-wrapper w-full card flex justify-center items-stretch">
-          <div class="bg-icelightBlue overlap-card h-full flex flex-col">
-            <div class="mx-auto md:mx-0 lg:w-1/2 flex justify-center">
-              <img
-                src="https://images.unsplash.com/photo-1510017803434-a899398421b3"
-                alt="Healthy lifestyle app"
-                class="object-cover max-w-[200px] lg:max-w-[424px] w-full lg:-mb-10 shrink-0 lg:mt-5 3xl:mt-11"
-              />
-            </div>
-
-            <div
-              class="lg:w-1/2 lg:max-w-[625px] 3xl:pt-[89px] lg:pt-16 pb-8 lg:pb-16 3xl:pb-[84px] flex flex-col items-center lg:items-start"
-            >
-              <h4
-                class="free-help-text font-fira text-celestialBlue mb-3 xl:mb-5 mt-3 lg:mt-0"
-              >
-                Dein persönlicher Start
-              </h4>
-
-              <h2 class="overlap-card-heading">
-                Schritt für Schritt zu einem gesünderen Leben
-              </h2>
-
-              <p
-                class="free-help-text text-KonBlue mt-3 mb-5 lg:mt-6 xl:mb-7 2xl:mt-8 3xl:mb-12 font-ibm-plex leading-[160%]!"
-              >
-                Mit klaren Anleitungen und verständlichen Videos bekommst du
-                eine strukturierte Einführung in deinen Rauchstopp. Du lernst
-                deine Gewohnheiten zu erkennen und gezielt zu verändern.
-              </p>
-
-              <button class="secondary-btn px-8!">Jetzt starten</button>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- CARD 2 -->
-      <article class="flex justify-center min-w-full h-full">
-        <div class="card-wrapper w-full card flex justify-center items-stretch">
-          <div class="bg-[#C8DEF1] overlap-card h-full flex flex-col">
-            <div class="mx-auto md:mx-0 lg:w-1/2 flex justify-center">
-              <img
-                src="https://images.unsplash.com/photo-1506126613408-eca07ce68773"
-                alt="Meditation and focus"
-                class="object-cover max-w-[200px] lg:max-w-[424px] w-full lg:-mb-10 shrink-0 lg:mt-5 3xl:mt-11"
-              />
-            </div>
-
-            <div
-              class="lg:w-1/2 lg:max-w-[625px] 3xl:pt-[89px] lg:pt-16 pb-8 lg:pb-16 3xl:pb-[84px] flex flex-col items-center lg:items-start"
-            >
-              <h4
-                class="free-help-text font-fira text-celestialBlue mb-3 xl:mb-5 mt-3 lg:mt-0"
-              >
-                Mentale Stärke aufbauen
-              </h4>
-
-              <h2 class="overlap-card-heading">
-                Verstehe deine Auslöser und kontrolliere dein Verlangen
-              </h2>
-
-              <p
-                class="free-help-text text-KonBlue mt-3 mb-5 lg:mt-6 xl:mb-7 2xl:mt-8 3xl:mb-12 font-ibm-plex leading-[160%]!"
-              >
-                Interaktive Übungen helfen dir dabei, Stresssituationen besser
-                zu meistern. Du entwickelst Strategien, um Rückfälle zu
-                vermeiden und dein Selbstvertrauen nachhaltig zu stärken.
-              </p>
-
-              <button class="secondary-btn px-8!">Mehr erfahren</button>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- CARD 3 -->
-      <article class="flex justify-center min-w-full h-full">
-        <div class="card-wrapper w-full card flex justify-center items-stretch">
-          <div class="bg-iceFishing overlap-card h-full flex flex-col">
+    <section class="relative overlap-container-container flex flex-col">
+      <article class="flex justify-center min-w-full">
+        <div class="card-wrapper w-full card flex items-center justify-center">
+          <!-- LEFT SIDE (PHONE IMAGE) -->
+          <div class="bg-icelightBlue overlap-card">
             <div class="mx-auto md:mx-0 lg:w-1/2 flex justify-center">
               <img
                 src="https://images.unsplash.com/photo-1498837167922-ddd27525d352"
-                alt="Healthy food lifestyle"
-                class="object-cover max-w-[200px] lg:max-w-[424px] w-full lg:-mb-10 shrink-0 lg:mt-5 3xl:mt-11"
+                alt="Meditation and focus"
+                class="overlap-card-img"
               />
             </div>
 
-            <div
-              class="lg:w-1/2 lg:max-w-[625px] 3xl:pt-[89px] lg:pt-16 pb-8 lg:pb-16 3xl:pb-[84px] flex flex-col items-center lg:items-start"
-            >
-              <h4
-                class="free-help-text font-fira text-celestialBlue mb-3 xl:mb-5 mt-3 lg:mt-0"
-              >
-                Nachhaltige Veränderung
+            <!-- RIGHT SIDE CONTENT -->
+            <div class="overlap-container-right">
+              <h4 class="overlap-main-heading">
+                Layer One: The Starting Point
               </h4>
-
-              <h2 class="overlap-card-heading">
-                Bleib motiviert und erreiche dein Ziel dauerhaft
-              </h2>
-
-              <p
-                class="free-help-text text-KonBlue mt-3 mb-5 lg:mt-6 xl:mb-7 2xl:mt-8 3xl:mb-12 font-ibm-plex leading-[160%]!"
-              >
-                Mit Fortschritts-Tracking und motivierenden Impulsen behältst du
-                deine Entwicklung im Blick. Kleine Erfolge werden sichtbar und
-                stärken deine Motivation für ein dauerhaft rauchfreies Leben.
+              <h2 class="overlap-card-heading">Transform Your Daily Routine</h2>
+              <p class="overlap-description">
+                This is where your transformation starts. A clear introduction
+                that sets the direction for everything that follows.
               </p>
-
-              <button class="secondary-btn px-8!">Zur Übersicht</button>
+              <a
+                href="https://www.instagram.com/debug_withme?igsh=MTB6bXYyZm5ibXc2dw=="
+                class="secondary-btn px-8!"
+                >Join here</a
+              >
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="flex justify-center min-w-full">
+        <div class="card-wrapper w-full card flex items-center justify-center">
+          <!-- LEFT SIDE (PHONE IMAGE) -->
+          <div class="bg-icelightBlue2 overlap-card">
+            <div class="mx-auto md:mx-0 lg:w-1/2 flex justify-center">
+              <img
+                src="https://images.unsplash.com/photo-1498837167922-ddd27525d352"
+                alt="Meditation and focus"
+                class="overlap-card-img"
+              />
+            </div>
+            <!-- RIGHT SIDE CONTENT -->
+            <div class="overlap-container-right">
+              <h4 class="overlap-main-heading">
+                Layer Two: Building Awareness
+              </h4>
+              <h2 class="overlap-card-heading">
+                Start Your Transformation Journey
+              </h2>
+              <p class="overlap-description">
+                As you move forward, deeper understanding replaces uncertainty.
+                You begin to see patterns clearly.
+              </p>
+              <a
+                href="https://www.instagram.com/debug_withme?igsh=MTB6bXYyZm5ibXc2dw=="
+                class="secondary-btn px-8!"
+                >Join here</a
+              >
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="flex justify-center min-w-full">
+        <div class="card-wrapper w-full card flex items-center justify-center">
+          <!-- LEFT SIDE (PHONE IMAGE) -->
+          <div class="bg-icelightBlue3 overlap-card">
+            <div class="mx-auto md:mx-0 lg:w-1/2 flex justify-center">
+              <img
+                src="https://images.unsplash.com/photo-1498837167922-ddd27525d352"
+                alt="Meditation and focus"
+                class="overlap-card-img"
+              />
+            </div>
+            <!-- RIGHT SIDE CONTENT -->
+            <div class="overlap-container-right">
+              <h4 class="overlap-main-heading">Layer Three: Taking Control</h4>
+              <h2 class="overlap-card-heading">
+                Build Momentum with Smart Daily Actions
+              </h2>
+              <p class="overlap-description">
+                With awareness comes action. Structured steps help you regain
+                control over your daily choices.
+              </p>
+              <a
+                href="https://www.instagram.com/debug_withme?igsh=MTB6bXYyZm5ibXc2dw=="
+                class="secondary-btn px-8!"
+                >Join here</a
+              >
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="flex justify-center min-w-full">
+        <div class="card-wrapper w-full card flex items-center justify-center">
+          <!-- LEFT SIDE (PHONE IMAGE) -->
+          <div class="bg-icelightBlue4 overlap-card">
+            <div class="mx-auto md:mx-0 lg:w-1/2 flex justify-center">
+              <img
+                src="https://images.unsplash.com/photo-1498837167922-ddd27525d352"
+                alt="Meditation and focus"
+                class="overlap-card-img"
+              />
+            </div>
+            <!-- RIGHT SIDE CONTENT -->
+            <div class="overlap-container-right">
+              <h4 class="overlap-main-heading">Layer Four: Visible Progress</h4>
+              <h2 class="overlap-card-heading">
+                Develop Focus and Inner Discipline
+              </h2>
+              <p class="overlap-description">
+                Momentum builds as consistency turns effort into discipline.
+              </p>
+              <a
+                href="https://www.instagram.com/debug_withme?igsh=MTB6bXYyZm5ibXc2dw=="
+                class="secondary-btn px-8!"
+                >Join here</a
+              >
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="flex justify-center min-w-full">
+        <div class="card-wrapper w-full card flex items-center justify-center">
+          <!-- LEFT SIDE (PHONE IMAGE) -->
+          <div class="bg-icelightBlue5 overlap-card">
+            <div class="mx-auto md:mx-0 lg:w-1/2 flex justify-center">
+              <img
+                src="https://images.unsplash.com/photo-1498837167922-ddd27525d352"
+                alt="Meditation and focus"
+                class="overlap-card-img"
+              />
+            </div>
+            <!-- RIGHT SIDE CONTENT -->
+            <div class="overlap-container-right">
+              <h4 class="overlap-main-heading">
+                Final Layer: Sustainable Success
+              </h4>
+              <h2 class="overlap-card-heading">
+                Track Your Progress with Confidence
+              </h2>
+              <p class="overlap-description">
+                Results start to show. Each improvement reinforces your
+                confidence.
+              </p>
+              <a
+                href="https://www.instagram.com/debug_withme?igsh=MTB6bXYyZm5ibXc2dw=="
+                class="secondary-btn px-8!"
+                >Join here</a
+              >
             </div>
           </div>
         </div>
       </article>
     </section>
-    <div class="h-dvh bg-green-900 mb-10"></div>
+    <div class="h-dvh bg-green-900 my-10"></div>
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+
+    <script src="/smooth-scroll.js"></script>
+    <script src="/overlap.js"></script>
   </body>
 </html>
