@@ -33,7 +33,7 @@ html {
   @apply font-poppins! h-auto;
 }
 .overlap-card {
-  @apply relative w-full xl:rounded-[20px] h-full pt-6 xl:pt-0 1xl:rounded-[40px] px-4 rounded-2xl flex lg:flex-row flex-col-reverse items-center xl:gap-12  text-center lg:text-left overflow-hidden;
+  @apply relative w-full xl:rounded-[20px] h-full 1xl:rounded-[40px] px-4 rounded-2xl flex gap-4 lg:flex-row flex-col-reverse items-center xl:gap-12  text-center lg:text-left overflow-hidden py-6 sm:py-8 lg:py-11;
 }
 .overlap-main-heading {
   @apply text-sm sm:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl text-celestialBlue mb-3 xl:mb-5 mt-3 lg:mt-0;
@@ -45,13 +45,13 @@ html {
   @apply text-sm sm:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl text-KonBlue mt-3 mb-5 lg:mt-6 xl:mb-7 2xl:mt-8 3xl:mb-12 leading-[160%];
 }
 .overlap-card-img {
-  @apply object-cover max-w-100 lg:max-w-106 w-full shrink-0 lg:mt-5 3xl:mt-11 rounded-lg lg:rounded-b-lg rounded-b-none;
+  @apply object-cover max-w-100 lg:max-w-106 w-full shrink-0 rounded-lg;
 }
 .overlap-container-container {
   @apply max-w-7xl 3xl:max-w-384 mx-auto w-full;
 }
 .overlap-container-right {
-  @apply lg:w-1/2 lg:max-w-156.25 3xl:pt-22.25 lg:pt-16 pb-8 lg:pb-16 3xl:pb-21 flex flex-col items-center lg:items-start;
+  @apply lg:w-1/2 lg:max-w-156.25 flex flex-col items-center lg:items-start;
 }
 .card {
   @apply flex;
